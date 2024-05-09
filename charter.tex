@@ -1,35 +1,36 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Modelo de Inteligencia Artificial para la regulación de temperatura de pacientes neonatales en tratamiento de hipotermia} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Inteligencia Artificial} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Título y Nombre del autor}
+\autor{Ing. Ezequiel Fernandez}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
-\codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
-\pertenenciaCoDirector{FIUBA}
+\pertenenciaDirector{FIUBA} 
+
+\codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
+\pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Marcelo Castiglione}
+\empresaCliente{AmrrA Electromedicina}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{23 de abril de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{11 de junio de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{15 de noviembre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,7 +59,7 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
+1      & Se completa hasta el punto 5 inclusive                &7  de mayo de 2024 \\ \hline
 %2      & Se completa hasta el punto 9 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -84,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de Inteligencia Artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de hipertermia e hipotermia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,51 +106,38 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El objetivo de este proyecto será contar con un modelo de Inteligencia Artificial prototipo que estime el cambio de temperatura en un equipo utilizado en tratamientos de pacientes neonatales con hipotermia e hipertermia. Además se hará foco en la incidencia de los parámetros que se disponen en el cálculo para aportar al conocimiento sobre estos tratamientos. Esto puede significar a futuro una mejora en un producto que desarrolla la empresa y brindar a quienes necesiten este tratamiento un desarrollo superador del mismo respecto a la actualidad. El proyecto será desarrollado dentro del marco del programa de vinculación. 
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+La empresa en cuestión es AmrrA y dispone de equipos llamados Amrraterm HTF. Estos sistemas se utilizan en pacientes neonatales con diagnóstico de hipotermia e hipertermia. Su objetivo es llevar la temperatura del paciente a un valor saludable, que suele estar cerca de los 36º.  Su funcionamiento consiste de hacer circular agua destilada a determinada temperatura controlada a través de materiales de alta transferencia térmica. Los equipos utilizan un algoritmo sustentado en lógica difusa para calcular qué cambio debe tener la temperatura del agua que circula en el equipo. 
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Se utilizarán diversos datos para construir un modelo acorde al problema como el peso del paciente, la edad, el diagnóstico y las variaciones de temperatura del agua y paciente. Además de construir un modelo superador, también se busca detectar la incidencia de ciertos parámetros, como el peso del paciente. 
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la figura \ref{fig:diagBloquesActual} se presenta un diagrama del funcionamiento del equipo actualmente. Existe una resistencia inmersa en el agua que circula por el equipo con el objetivo de regular su temperatura. Mediante un algoritmo de lógica difusa se regula el cambio en la temperatura del agua, y luego se calcula el ancho del pulso periódico con el que se le dará energía a la resistencia que calienta el agua que circula.
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
+	\centering 
+	\includegraphics[width=.65\textwidth]{./Figuras/amrra-diagrama1.png}
+	\caption{Diagrama en bloques del sistema actual.}
+	\label{fig:diagBloquesActual}
 \end{figure}
 
-\vspace{25px}
+En la figura  \ref{fig:diagBloquesFuturo} se puede ver la incorporación de un modelo de Inteligencia Artificial en comparación con el actual.
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=.65\textwidth]{./Figuras/amrra-diagrama2.png}
+	\caption{Diagrama en bloques del sistema actual.}
+	\label{fig:diagBloquesFuturo}
+\end{figure}
 
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-\end{consigna}
+Si bien existen artículos en la actualidad que analizan el uso de diversos modelos de Machine Learning en contextos de hipotermia, la mayoría ponen el foco en estimar la mortalidad de los casos o en predecir potenciales casos de hipotermia. Estos son enfoques interesantes a futuro, pero en este caso nos centraremos en analizar la incidencia del peso del paciente en el cálculo y en construir un modelo para este equipo especifico. 
+
+El presente proyecto se ve impulsado por buscar innovación utilizando tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para hipotermia y hipertermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
+
+A futuro se llevará a cabo la integración del modelo resultante al sistema embebido del producto comercial Amrraterm HTF.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -158,88 +146,69 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   & Área de Ingeniería  &  AmrrA electromedicina &        Área de Ingeniería	\\ \hline
+Cliente       &  Área de Ingeniería      & AmrrA electromedicina		&        Área de Ingeniería	\\ \hline
+Impulsor      &  Marcelo  Castiglione &  AmrrA electromedicina	&        Área de Ingeniería	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores &  Ing. Laneri                 &      AmrrA electromedicina        	&   Área de Ingeniería	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final &   Médicos    &    Hospitales	&        -	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
  
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Orientador: el director del trabajo es experto en la temática y va a ayudar con la exploración inicial y definición de estrategias para llegar a los objetivos.
+	\item Impulsor: está muy interesado en el tema y en ayudar en lo que esté a su alcance.
+	\item Usuario final: los médicos son quienes utilizarán los equipos y pueden  hacer comentarios acerca del uso de los mismos, pero también debemos mencionar a los pacientes que serán tratados.
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
+	
+El propósito de este proyecto está orientado a cubrir los siguientes aspectos:
+\begin{itemize}
+	\item Desde un punto de vista funcional, consistirá de brindar un modelo de Inteligencia Artificial que estime cambio de temperatura óptimo para la salud del paciente en un instante.
+	\item Desde un punto de vista conceptual, se desea analizar la incidencia del peso en este tratamiento.
+	\item Desde un punto de vista personal, servirá como un medio formal para acreditar la Especialización en Inteligencia Artificial y como primer experiencia en un proyecto de esta temática en un ambiente cercano al laboral.	
+\end{itemize}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El alcance de este proyecto está orientado a desarrollar una solución de Inteligencia Artificial acorde al problema planteado. Se cubrirán los siguientes ejes de trabajo:
 
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
-El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+	\item Entendimiento del problema y negocio: profundo aprendizaje sobre el contexto y rol que tendrá el modelo.
+	\item Adquisición de datos y análisis de los mismos: análisis y preprocesamiento de los datos; y generación de datos sintéticos en caso de escasez.
+	\item Modelado: se evaluarán diversos modelos, buscando al de mejor rendimiento en función de poder predictivo y significado de los atributos.
+	\item Resultado conceptual: se evaluará la incidencia de cada parámetro en las estimaciones del modelo.
+	\item Visibilidad: se ofrecerá una forma de probar al modelo y de evaluarlo contra el algoritmo actual	
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto no incluye: 
+\begin{itemize}
+	\item La incorporación del modelo a los equipos en funcionamiento.
+	\item El despliegue del modelo en la nube.
+	\item El desarrollo de una interface gráfica, una aplicación o una web.
+\end{itemize}
 
-\end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que: 
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item El desarrollo es alcanzable con los conocimientos actuales.
+	\item El tiempo será suficiente para alcanzar los objetivos planteados. teniendo en cuenta imprevistos y cambios de enfoque posibles.
+	\item Los accesos a la información y a los datos serán concedidos en tiempo y forma.
+	\item La cantidad de datos disponibles y el pr procesamiento que pueda hacerse de los mismos será suficiente para un resultado aceptable.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
