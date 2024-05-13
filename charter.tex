@@ -213,73 +213,95 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
-
 \begin{enumerate}
 	\item Requerimientos funcionales:
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+			\item El modelo predecir el cambio de temperatura óptimo a aplicar.
+			\item La salida del modelo debe ser conceptualmente análoga a la del algoritmo de lógica difusa utilizado actualmente a fin de poder compararlos.
+			\item El modelo debe dar una respuesta en un tiempo promedio menor o igual a 10 veces el tiempo promedio de respuesta del algoritmo actual.
+			\item El sistema debe permitir ingresar datos de forma manual y mostrar el resultado.
+			\item Se debe calcular la incidencia del peso y de los demás atributos en la solución.
 		\end{enumerate}
-	\item Requerimientos de documentación:
+	\item Requerimientos conceptuales:
 		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
+			\item Deben utilizarse datos sintéticos en el entrenamiento.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Requerimiento de testing:
+		\begin{enumerate}
+			\item Se deben ejecutar pruebas secuenciales con datos reales y mostrar una comparación entre los resultados del modelo a implementar y del algoritmo actual.
+			\item Se deben comparar tiempos entre el modelo propuesto y el algoritmo actual.
+			\item Se debe calcular una métrica a definir para calcular la performance del modelo.
+		\end{enumerate}
+	\item Requerimiento de documentación:
+		\begin{enumerate}
+			\item Se deben documentar las decisiones tomadas.
+			\item Se deben documentar los resultados de las pruebas y las distintas métricas.
+			\item Se requiere documentar el código y las formas de utilizar al sistema.
+		\end{enumerate}
+	\item Requerimiento asociados con regulaciones
+		\begin{enumerate}
+			\item Se requiere que los casos utilizados no expongan datos que infrinjan derechos de privacidad.
+		\end{enumerate}
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+En esta sección se describirán algunas historias de usuarios ponderadas en un sistema de puntos, según el rol de cliente.
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
+Para determinar los puntos de cada historia se definen los siguientes criterios:
+\begin{itemize}
+	\item Cantidad de trabajo:
+	\begin{itemize}
+		\item Baja: 1 punto.
+		\item Media: 3 puntos.
+		\item Alta: 5 puntos.
+	\end{itemize}
+	\item Complejidad del trabajo:
+		\begin{itemize}
+			\item Baja: 2 puntos.
+			\item Media: 5 puntos.
+			\item Alta: 13 puntos.
+		\end{itemize}
+	\item Incertidumbre del trabajo:
+		\begin{itemize}
+			\item Baja: 3 puntos.
+			\item Media: 5 puntos.
+			\item Alta: 10 puntos.
+		\end{itemize}
+\end{itemize}
 
-El formato propuesto es: 
-\begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
+La cantidad de puntos de una historia de usuario estará definida por el número en la sucesión de Fibonacci mas cercano y mayor o igual a la suma del puntaje de los tres criterios definidos.
 
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
-\end{enumerate}
-\end{consigna}
+\begin{itemize}
+	\item Como cliente, quiero contar con un modelo que estime el cambio de temperatura en el equipo para tratamientos de hipotermia.
+	\begin{itemize}
+		\item Cantidad: de trabajo 5 puntos.
+		\item Complejidad: 5 puntos.
+		\item Incertidumbre: 10 puntos.
+		\item Story Points: 5 + 5 + 10 = 20, tomando el siguiente de la sucesión de Fibonacci el puntaje es 21.
+	\end{itemize}
+	\item Como cliente, quiero conocer la incidencia del peso en el calculo de la variación de temperatura óptima para los pacientes.
+		\begin{itemize}
+			\item Cantidad: de trabajo 1 punto.
+			\item Complejidad: 5 puntos.
+			\item Incertidumbre: 5 puntos.
+			\item Story Points: 1 + 5 + 5 = 11, tomando el siguiente de la sucesión de Fibonacci el puntaje es 13.
+		\end{itemize}
+\end{itemize}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
-	\item Código fuente del firmware.
-	\item Diagrama de instalación.
+	\item Manual de uso e integración del sistema.
+	\item Código fuente.
+	\item Diagrama de funcionamiento del sistema.
+	\item Informe de pruebas.
 	\item Memoria del trabajo final.
-	\item etc...
 \end{itemize}
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
