@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Modelo de Inteligencia Artificial para la regulación de temperatura de pacientes neonatales en tratamiento de hipotermia} 
+\titulo{Modelo de inteligencia artificial para la regulación de temperatura en equipos de inducción de hipotermia} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Inteligencia Artificial} 
@@ -30,7 +30,7 @@
  
 \fechaINICIO{23 de abril de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{11 de junio de 2024} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de noviembre de 2024}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{9 de diciembre de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,9 +58,9 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                &7  de mayo de 2024 \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
+0      & Creación del documento    &\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive   & 7  de mayo de 2024 \\ \hline
+2      & Se completa hasta el punto 9 inclusive  & 14  de mayo de 2024 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & {día} de {mes} de 202X \\ \hline
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de Inteligencia Artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de hipertermia e hipotermia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de inteligencia artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de hipertermia e hipotermia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,13 +106,19 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El objetivo de este proyecto será contar con un modelo de Inteligencia Artificial prototipo que estime el cambio de temperatura en un equipo utilizado en tratamientos de pacientes neonatales con hipotermia e hipertermia. Además se hará foco en la incidencia de los parámetros que se disponen en el cálculo para aportar al conocimiento sobre estos tratamientos. Esto puede significar a futuro una mejora en un producto que desarrolla la empresa y brindar a quienes necesiten este tratamiento un desarrollo superador del mismo respecto a la actualidad. El proyecto será desarrollado dentro del marco del programa de vinculación. 
+El objetivo de este proyecto será contar con un modelo de inteligencia artificial prototipo que estime la temperatura del agua que circula en un equipo utilizado para la inducción de hipotermia a pacientes neonatales. Además se hará foco en la incidencia de los parámetros que se disponen en el cálculo para aportar al conocimiento sobre estos tratamientos. Esto puede significar a futuro una mejora en un producto que desarrolla la empresa y brindar a quienes necesiten este tratamiento un desarrollo superador del mismo respecto a la actualidad. El proyecto será desarrollado dentro del marco del programa de vinculación. 
 
-La empresa en cuestión es AmrrA y dispone de equipos llamados Amrraterm HTF. Estos sistemas se utilizan en pacientes neonatales con diagnóstico de hipotermia e hipertermia. Su objetivo es llevar la temperatura del paciente a un valor saludable, que suele estar cerca de los 36º.  Su funcionamiento consiste de hacer circular agua destilada a determinada temperatura controlada a través de materiales de alta transferencia térmica. Los equipos utilizan un algoritmo sustentado en lógica difusa para calcular qué cambio debe tener la temperatura del agua que circula en el equipo. 
+La empresa es AmrrA y los equipos en cuestión tienen el nombre Amrraterm HTF. Estos sistemas se utilizan con el propósito de inducir una hipotermia controlada en pacientes neonatales. Existen contextos en los cuales esto proporciona una mejor evolución de los pacientes. El principal caso de uso es el de pacientes que sufren hipoxia al nacer, esto es, falta de oxígeno en el cerebro. En estos casos, a temperatura corporal normal la interacción entre las neuronas es alta y se pueden desarrollar efectos adversos en la capacidad cerebral del paciente. Por esto un tratamiento estándar es el de inducir hipotermia por 72 horas a fin de minimizar los efectos que la hipoxia puede generar a futuro en los pacientes. 
 
-Se utilizarán diversos datos para construir un modelo acorde al problema como el peso del paciente, la edad, el diagnóstico y las variaciones de temperatura del agua y paciente. Además de construir un modelo superador, también se busca detectar la incidencia de ciertos parámetros, como el peso del paciente. 
+Para lograr esto el procedimiento estándar es sedar al paciente y colocarlo dentro de una incubadora. Allí el mismo es envuelto en las mantas que forman parte del equipo. Por éstas circula agua destilada. El equipo regula la temperatura del agua en función de la temperatura objetivo, que suele ser de 33,5º C, y la actual del paciente. Una vez terminado el tratamiento de hipotermia, el equipo funciona en un modo llamado rampa, en el cual sube paulatinamente la temperatura hasta llegar a un estado normal.
 
-En la figura \ref{fig:diagBloquesActual} se presenta un diagrama del funcionamiento del equipo actualmente. Existe una resistencia inmersa en el agua que circula por el equipo con el objetivo de regular su temperatura. Mediante un algoritmo de lógica difusa se regula el cambio en la temperatura del agua, y luego se calcula el ancho del pulso periódico con el que se le dará energía a la resistencia que calienta el agua que circula.
+Si bien existe un protocolo, que es el antes descrito, se dan ocasiones en las que se hace un mal uso del equipo, estableciendo como temperatura objetivo un valor inferior a los 33,5º C o utilizándolo en pacientes que no están correctamente sedados en incubadora. Estos casos podrían afectar los resultados del modelo por lo que deberían categorizarse.
+
+En la actualidad la temperatura del agua es regulada por un algoritmo de lógica difusa. En un rango de pesos estándar (entre 2,5 kg y 3,5 kg) el algoritmo funciona correctamente, pero es posible que en pesos inferiores o superiores haya comportamientos que este proyecto pueda mejorar. Se desarrollará este modelo para evaluar si funciona mejor que el algoritmo actual en ese rango, en los valores inferiores o en los superiores de peso. 
+
+Se utilizarán diversos datos para construir un modelo acorde al problema como el peso del paciente, la edad, la temperatura objetivo y las variaciones de temperatura del agua y paciente. Además de construir un modelo superador, también se busca detectar la incidencia de ciertos parámetros, como el peso del paciente, no utilizado por el algoritmo actual. Para evaluar el comportamiento del modelo se debe implementar un entorno, en algún lenguaje de programación a conveniencia de las partes, que permita evaluar y comparar resultados. 
+
+En la figura \ref{fig:diagBloquesActual} se presenta un diagrama del funcionamiento del equipo actualmente. La temperatura del agua es regulada a través de un sistema térmico. Periódicamente un algoritmo de lógica difusa calcula la temperatura que debe tener el agua en el siguiente periodo.
 
 \begin{figure}[htpb]
 	\centering 
@@ -121,18 +127,18 @@ En la figura \ref{fig:diagBloquesActual} se presenta un diagrama del funcionamie
 	\label{fig:diagBloquesActual}
 \end{figure}
 
-En la figura  \ref{fig:diagBloquesFuturo} se puede ver la incorporación de un modelo de Inteligencia Artificial en comparación con el actual.
+En la figura  \ref{fig:diagBloquesFuturo} se puede ver la incorporación de un modelo de inteligencia artificial en comparación con el actual.
 
 \begin{figure}[htpb]
 	\centering 
 	\includegraphics[width=.65\textwidth]{./Figuras/amrra-diagrama2.png}
-	\caption{Diagrama en bloques del sistema actual.}
+	\caption{Diagrama en bloques del sistema integrando al modelo.}
 	\label{fig:diagBloquesFuturo}
 \end{figure}
 
-Si bien existen artículos en la actualidad que analizan el uso de diversos modelos de Machine Learning en contextos de hipotermia, la mayoría ponen el foco en estimar la mortalidad de los casos o en predecir potenciales casos de hipotermia. Estos son enfoques interesantes a futuro, pero en este caso nos centraremos en analizar la incidencia del peso del paciente en el cálculo y en construir un modelo para este equipo especifico. 
+Si bien existen artículos en la actualidad que analizan el uso de diversos modelos de \textit{machine learning} en contextos de hipotermia, la mayoría ponen el foco en estimar la mortalidad de los casos o en predecir potenciales casos de hipotermia. Estos enfoques son interesantes para evaluar los riesgos de someter al paciente bajo este tratamiento pero no son el objetivo de este proyecto. En este caso el foco estará en un modelo que regule de forma óptima la inducción a hipotermia de un paciente.
 
-El presente proyecto se ve impulsado por buscar innovación utilizando tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para hipotermia y hipertermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
+El presente proyecto se ve impulsado por buscar innovación utilizando tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para la correcta inducción de hipotermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
 
 A futuro se llevará a cabo la integración del modelo resultante al sistema embebido del producto comercial Amrraterm HTF.
 
@@ -159,7 +165,7 @@ Usuario final &   Médicos    &    Hospitales	&        -	\\ \hline
 \begin{itemize}
 	\item Orientador: el director del trabajo es experto en la temática y va a ayudar con la exploración inicial y definición de estrategias para llegar a los objetivos.
 	\item Impulsor: está muy interesado en el tema y en ayudar en lo que esté a su alcance.
-	\item Usuario final: los médicos son quienes utilizarán los equipos y pueden  hacer comentarios acerca del uso de los mismos, pero también debemos mencionar a los pacientes que serán tratados.
+	\item Usuario final: los médicos son quienes utilizarán los equipos y pueden  hacer comentarios acerca del uso de estos, pero también debemos mencionar a los pacientes que serán tratados.
 \end{itemize}
 
 
@@ -168,7 +174,7 @@ Usuario final &   Médicos    &    Hospitales	&        -	\\ \hline
 	
 El propósito de este proyecto está orientado a cubrir los siguientes aspectos:
 \begin{itemize}
-	\item Desde un punto de vista funcional, consistirá de brindar un modelo de Inteligencia Artificial que estime cambio de temperatura óptimo para la salud del paciente en un instante.
+	\item Desde un punto de vista funcional, consistirá de brindar un modelo de inteligencia artificial que estime cambio de temperatura óptimo para la salud del paciente en un instante.
 	\item Desde un punto de vista conceptual, se desea analizar la incidencia del peso en este tratamiento.
 	\item Desde un punto de vista personal, servirá como un medio formal para acreditar la Especialización en Inteligencia Artificial y como primer experiencia en un proyecto de esta temática en un ambiente cercano al laboral.	
 \end{itemize}
@@ -178,21 +184,21 @@ El propósito de este proyecto está orientado a cubrir los siguientes aspectos:
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-El alcance de este proyecto está orientado a desarrollar una solución de Inteligencia Artificial acorde al problema planteado. Se cubrirán los siguientes ejes de trabajo:
+El alcance de este proyecto está orientado a desarrollar una solución de inteligencia artificial acorde al problema planteado. Se cubrirán los siguientes ejes de trabajo:
 
 \begin{itemize}
 	\item Entendimiento del problema y negocio: profundo aprendizaje sobre el contexto y rol que tendrá el modelo.
-	\item Adquisición de datos y análisis de los mismos: análisis y preprocesamiento de los datos; y generación de datos sintéticos en caso de escasez.
+	\item Adquisición de datos y análisis de los mismos: análisis y preprocesamiento de los datos y generación de datos sintéticos en caso de escasez.
 	\item Modelado: se evaluarán diversos modelos, buscando al de mejor rendimiento en función de poder predictivo y significado de los atributos.
 	\item Resultado conceptual: se evaluará la incidencia de cada parámetro en las estimaciones del modelo.
-	\item Visibilidad: se ofrecerá una forma de probar al modelo y de evaluarlo contra el algoritmo actual	
+	\item Visibilidad: se ofrecerá una forma de probar al modelo y de evaluarlo contra el algoritmo actual.
 \end{itemize}
 
 El presente proyecto no incluye: 
 \begin{itemize}
 	\item La incorporación del modelo a los equipos en funcionamiento.
 	\item El despliegue del modelo en la nube.
-	\item El desarrollo de una interface gráfica, una aplicación o una web.
+	\item El desarrollo de una interfaz gráfica, una aplicación o una web.
 \end{itemize}
 
 
@@ -306,39 +312,53 @@ Los entregables del proyecto son:
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1 (suma h)
+\item Planificación general del proyecto (50 h).
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Redacción de la descripción técnica y propósito (20 h).
+	\item Definición del alcance, riesgos y requerimientos (10 h).
+	\item Planificación del desarrollo (20 h).
 	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
+\item Exploración y preprocesamiento de datos (110 h).
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Análisis exploratorio de los datos (10 h).
+	\item Generación de datos sintéticos (40 h).
+	\item Preprocesamiento y categorización de datos (40 h).
+	\item Etiquetado de datos según contextos de uso (20 h).
 	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
+\item Desarrollo del modelo (230 h).
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Definición del criterio de medición y comparación de modelos (16 h).
+	\item Selección de modelos a utilizar (16 h).
+	\item Implementación de los modelos (40 h).
+	\item Experimentación con los modelos (40 h).
+	\item Comparación de resultados y elección de modelo a utilizar (8 h).	
+	\item Optimización del modelo elegido (40 h).
+	\item Refinamiento del modelo y entendimiento del comportamiento del mismo (40 h).
+	\item Cálculo de la incidencia de los parámetros en la predicción (30 h).
+	\end{enumerate}
+\item Desarrollo del entorno donde se prueba el modelo (68 h).
+\begin{enumerate}
+	\item Definición del lenguaje (8 h).
+	\item Desarrollo del entorno (30 h).
+	\item Integración del entorno con los algoritmos a probar (30 h).
+\end{enumerate}
+\item Evaluación y pruebas comparativas (72 h).
+	\begin{enumerate}
+	\item Pruebas comparativas con el algoritmo actual (24 h).
+	\item Generación de gráficos y documentación de pruebas (16 h).
+	\item Análisis de resultados (16 h).
+	\item Comparación de tiempos de respuesta de los algoritmos (16 h).
+	\end{enumerate}
+\item Elaboración de la memoria (80 h).
+	\begin{enumerate}
+	\item Escritura de la memoria final (40 h).
+	\item Elaboración de la presentación para la exposición final (20 h).
+	\item Escritura de la documentación técnica del modelo y su uso para el cliente (20 h).
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: tantas.
-
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
+Cantidad total de horas: 610 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
