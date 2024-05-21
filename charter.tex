@@ -18,7 +18,7 @@
 \autor{Ing. Ezequiel Fernandez}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
+\director{Dr. Ing. Tobías Canavesi}
 \pertenenciaDirector{FIUBA} 
 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
@@ -61,10 +61,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento    &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive   & 7  de mayo de 2024 \\ \hline
 2      & Se completa hasta el punto 9 inclusive  & 14  de mayo de 2024 \\ \hline
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & 21 de mayo de 2024 \\ \hline
 %4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
@@ -85,7 +82,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de inteligencia artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de hipertermia e hipotermia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de inteligencia artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de de pacientes neonatales con hipoxia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -110,19 +107,19 @@ El objetivo de este proyecto será contar con un modelo de inteligencia artifici
 
 La empresa es AmrrA y los equipos en cuestión tienen el nombre Amrraterm HTF. Estos sistemas se utilizan con el propósito de inducir una hipotermia controlada en pacientes neonatales. Existen contextos en los cuales esto proporciona una mejor evolución de los pacientes. El principal caso de uso es el de pacientes que sufren hipoxia al nacer, esto es, falta de oxígeno en el cerebro. En estos casos, a temperatura corporal normal la interacción entre las neuronas es alta y se pueden desarrollar efectos adversos en la capacidad cerebral del paciente. Por esto un tratamiento estándar es el de inducir hipotermia por 72 horas a fin de minimizar los efectos que la hipoxia puede generar a futuro en los pacientes. 
 
-Para lograr esto el procedimiento estándar es sedar al paciente y colocarlo dentro de una incubadora. Allí el mismo es envuelto en las mantas que forman parte del equipo. Por éstas circula agua destilada. El equipo regula la temperatura del agua en función de la temperatura objetivo, que suele ser de 33,5º C, y la actual del paciente. Una vez terminado el tratamiento de hipotermia, el equipo funciona en un modo llamado rampa, en el cual sube paulatinamente la temperatura hasta llegar a un estado normal.
+Para lograr esto el procedimiento estándar es sedar al paciente y colocarlo dentro de una incubadora, donde es envuelto en las mantas que forman parte del equipo. Por estas mantas circula agua destilada. El equipo recibe como dato de entrada la temperatura objetivo a la cual se quiere llevar al paciente, que suele ser de 33,5º C, y regula la temperatura del agua en función de la temperatura objetivo y la actual del paciente. Una vez terminado el tratamiento de hipotermia, el equipo funciona en un modo llamado rampa, en el cual sube paulatinamente la temperatura hasta llegar a un estado normal.
 
-Si bien existe un protocolo, que es el antes descrito, se dan ocasiones en las que se hace un mal uso del equipo, estableciendo como temperatura objetivo un valor inferior a los 33,5º C o utilizándolo en pacientes que no están correctamente sedados en incubadora. Estos casos podrían afectar los resultados del modelo por lo que deberían categorizarse.
+Si bien existe un protocolo, que es el antes descrito, se dan ocasiones en las que se hace un mal uso del equipo, estableciendo como temperatura objetivo un valor inferior a los 33,5º C o utilizándolo en pacientes que no están correctamente sedados en la incubadora. Estos casos podrían afectar los resultados del modelo por lo que deberían categorizarse.
 
-En la actualidad la temperatura del agua es regulada por un algoritmo de lógica difusa. En un rango de pesos estándar (entre 2,5 kg y 3,5 kg) el algoritmo funciona correctamente, pero es posible que en pesos inferiores o superiores haya comportamientos que este proyecto pueda mejorar. Se desarrollará este modelo para evaluar si funciona mejor que el algoritmo actual en ese rango, en los valores inferiores o en los superiores de peso. 
+En la actualidad la temperatura del agua es regulada por un algoritmo de lógica difusa. En un rango de pesos estándar de los pacientes (entre 2,5 kg y 3,5 kg) el algoritmo funciona correctamente, pero es posible que en pesos inferiores o superiores haya comportamientos que este proyecto pueda mejorar. Se desarrollará este modelo para evaluar si funciona mejor que el algoritmo actual en ese rango, en los valores inferiores o en los superiores de peso. 
 
-Se utilizarán diversos datos para construir un modelo acorde al problema como el peso del paciente, la edad, la temperatura objetivo y las variaciones de temperatura del agua y paciente. Además de construir un modelo superador, también se busca detectar la incidencia de ciertos parámetros, como el peso del paciente, no utilizado por el algoritmo actual. Para evaluar el comportamiento del modelo se debe implementar un entorno, en algún lenguaje de programación a conveniencia de las partes, que permita evaluar y comparar resultados. 
+Se utilizarán diversos datos para construir un modelo acorde al problema como el peso del paciente, la edad, la temperatura objetivo y las variaciones de temperatura del agua y paciente. Además de construir un modelo superador, también se busca detectar la incidencia de ciertos parámetros, como el peso del paciente, que no se utiliza por el algoritmo actual. Para evaluar el comportamiento del modelo se debe implementar un entorno, en algún lenguaje de programación a conveniencia de las partes, que permita evaluar y comparar resultados. 
 
 En la figura \ref{fig:diagBloquesActual} se presenta un diagrama del funcionamiento del equipo actualmente. La temperatura del agua es regulada a través de un sistema térmico. Periódicamente un algoritmo de lógica difusa calcula la temperatura que debe tener el agua en el siguiente periodo.
 
 \begin{figure}[htpb]
 	\centering 
-	\includegraphics[width=.65\textwidth]{./Figuras/amrra-diagrama1.png}
+	\includegraphics[width=.95\textwidth]{./Figuras/amrra-diagrama1.png}
 	\caption{Diagrama en bloques del sistema actual.}
 	\label{fig:diagBloquesActual}
 \end{figure}
@@ -131,14 +128,14 @@ En la figura  \ref{fig:diagBloquesFuturo} se puede ver la incorporación de un m
 
 \begin{figure}[htpb]
 	\centering 
-	\includegraphics[width=.65\textwidth]{./Figuras/amrra-diagrama2.png}
+	\includegraphics[width=.95\textwidth]{./Figuras/amrra-diagrama2.png}
 	\caption{Diagrama en bloques del sistema integrando al modelo.}
 	\label{fig:diagBloquesFuturo}
 \end{figure}
 
 Si bien existen artículos en la actualidad que analizan el uso de diversos modelos de \textit{machine learning} en contextos de hipotermia, la mayoría ponen el foco en estimar la mortalidad de los casos o en predecir potenciales casos de hipotermia. Estos enfoques son interesantes para evaluar los riesgos de someter al paciente bajo este tratamiento pero no son el objetivo de este proyecto. En este caso el foco estará en un modelo que regule de forma óptima la inducción a hipotermia de un paciente.
 
-El presente proyecto se ve impulsado por buscar innovación utilizando tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para la correcta inducción de hipotermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
+El presente proyecto se ve impulsado por buscar innovación con el uso tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para la correcta inducción de hipotermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
 
 A futuro se llevará a cabo la integración del modelo resultante al sistema embebido del producto comercial Amrraterm HTF.
 
@@ -165,7 +162,7 @@ Usuario final &   Médicos    &    Hospitales	&        -	\\ \hline
 \begin{itemize}
 	\item Orientador: el director del trabajo es experto en la temática y va a ayudar con la exploración inicial y definición de estrategias para llegar a los objetivos.
 	\item Impulsor: está muy interesado en el tema y en ayudar en lo que esté a su alcance.
-	\item Usuario final: los médicos son quienes utilizarán los equipos y pueden  hacer comentarios acerca del uso de estos, pero también debemos mencionar a los pacientes que serán tratados.
+	\item Usuario final: los médicos son quienes utilizarán los equipos y pueden  hacer comentarios acerca del uso de estos, pero también se debe mencionar a los pacientes que serán tratados.
 \end{itemize}
 
 
@@ -174,8 +171,8 @@ Usuario final &   Médicos    &    Hospitales	&        -	\\ \hline
 	
 El propósito de este proyecto está orientado a cubrir los siguientes aspectos:
 \begin{itemize}
-	\item Desde un punto de vista funcional, consistirá de brindar un modelo de inteligencia artificial que estime cambio de temperatura óptimo para la salud del paciente en un instante.
-	\item Desde un punto de vista conceptual, se desea analizar la incidencia del peso en este tratamiento.
+	\item Desde un punto de vista funcional, consistirá en brindar un modelo de inteligencia artificial que estime cambio de temperatura óptimo para la salud del paciente en un instante.
+	\item Desde un punto de vista conceptual, se desea analizar la incidencia del peso del paciente en este tratamiento.
 	\item Desde un punto de vista personal, servirá como un medio formal para acreditar la Especialización en Inteligencia Artificial y como primer experiencia en un proyecto de esta temática en un ambiente cercano al laboral.	
 \end{itemize}
 
@@ -222,8 +219,8 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 	\item Requerimientos funcionales:
 		\begin{enumerate}
-			\item El modelo predecir el cambio de temperatura óptimo a aplicar.
-			\item La salida del modelo debe ser conceptualmente análoga a la del algoritmo de lógica difusa utilizado actualmente a fin de poder compararlos.
+			\item El modelo debe predecir el cambio de temperatura óptimo a aplicar.
+			\item La salida del modelo debe ser conceptualmente análoga a la del algoritmo de lógica difusa utilizado actualmente, a fin de poder compararlos.
 			\item El modelo debe dar una respuesta en un tiempo promedio menor o igual a 10 veces el tiempo promedio de respuesta del algoritmo actual.
 			\item El sistema debe permitir ingresar datos de forma manual y mostrar el resultado.
 			\item Se debe calcular la incidencia del peso y de los demás atributos en la solución.
@@ -281,19 +278,33 @@ La cantidad de puntos de una historia de usuario estará definida por el número
 
 \begin{itemize}
 	\item Como cliente, quiero contar con un modelo que estime el cambio de temperatura en el equipo para tratamientos de hipotermia.
-	\begin{itemize}
-		\item Cantidad: de trabajo 5 puntos.
-		\item Complejidad: 5 puntos.
-		\item Incertidumbre: 10 puntos.
-		\item Story Points: 5 + 5 + 10 = 20, tomando el siguiente de la sucesión de Fibonacci el puntaje es 21.
-	\end{itemize}
+		\begin{itemize}
+			\item Cantidad de trabajo 5 puntos.
+			\item Complejidad: 5 puntos.
+			\item Incertidumbre: 10 puntos.
+			\item Story Points: 5 + 5 + 10 = 20, tomando el siguiente de la sucesión de Fibonacci el puntaje es 21.
+		\end{itemize}
 	\item Como cliente, quiero conocer la incidencia del peso en el calculo de la variación de temperatura óptima para los pacientes.
 		\begin{itemize}
-			\item Cantidad: de trabajo 1 punto.
+			\item Cantidad de trabajo 1 punto.
 			\item Complejidad: 5 puntos.
 			\item Incertidumbre: 5 puntos.
 			\item Story Points: 1 + 5 + 5 = 11, tomando el siguiente de la sucesión de Fibonacci el puntaje es 13.
 		\end{itemize}
+	\item Como cliente, quiero una guía que explique el funcionamiento y la forma de utilizar el modelo, a modo de integrarlo en el equipo en el futuro.
+		\begin{itemize}
+			\item Cantidad de trabajo 3 puntos.
+			\item Complejidad: 2 puntos.
+			\item Incertidumbre: 3 puntos.
+			\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual mas cercano de la sucesión de Fibonacci el puntaje es 8.
+		\end{itemize}
+	\item Como cliente, quiero un entorno en el cual comparar el resultado del modelo y el del algoritmo actual para una entrada dada.
+	\begin{itemize}
+		\item Cantidad de trabajo 3 puntos.
+		\item Complejidad: 2 puntos.
+		\item Incertidumbre: 3 puntos.
+		\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual mas cercano de la sucesión de Fibonacci el puntaje es 8.
+	\end{itemize}
 \end{itemize}
 
 \section{8. Entregables principales del proyecto}
@@ -352,7 +363,7 @@ Los entregables del proyecto son:
 	\end{enumerate}
 \item Elaboración de la memoria (80 h).
 	\begin{enumerate}
-	\item Escritura de la memoria final (40 h).
+	\item Escritura de la memoria del trabajo final (40 h).
 	\item Elaboración de la presentación para la exposición final (20 h).
 	\item Escritura de la documentación técnica del modelo y su uso para el cliente (20 h).
 	\end{enumerate}
@@ -363,130 +374,49 @@ Cantidad total de horas: 610 h.
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
+En la figura \ref{fig:aon} se puede ver un diagrama Activity on Node del proyecto, donde las unidades de tiempo están expresadas en horas, y en la figura \ref{fig:aon_referencias} se ven las referencias del diagrama.
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
+	\centering 
+	\includegraphics[width=1.05\textwidth]{./Figuras/amrra-aon-referencias.png}
+	\caption{Referencias del diagrama Activity on Node.}
+	\label{fig:aon_referencias}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
-
-\end{consigna}
+\begin{figure}[htpb]
+	\centering 
+	\includegraphics[width=.75\textwidth]{./Figuras/amrra-AON.png}
+	\caption{Activity on Node del proyecto.}
+	\label{fig:aon}
+\end{figure}
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
+A continuación se muestra el diagrama de Gantt del proyecto, dividido en dos partes.
 
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
+En la figura \ref{fig:gantt_tareas} se muestra el listado de tareas definido previamente, y en la figura  \ref{fig:gantt_diagram} se ve el diagrama. Las fechas se muestran en inglés debido al software utilizado. 
 
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
-
-\begin{figure}[htpb]
-  \begin{center}
-    \begin{ganttchart}[
-      time slot unit=day,
-      time slot format=isodate,
-      x unit=0.038cm,
-      y unit title=0.7cm,
-      y unit chart=0.6cm,
-      milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{ganttchart}
-  \end{center}
-  \caption{Diagrama de gantt de ejemplo}
-  \label{fig:gantt}
-\end{figure}
-
-
+	\begin{figure}[htpb]
+		\centering 
+		\includegraphics[height=.45\textheight]{./Figuras/gantt_tareas.png}
+		\caption{Tareas del diagrama de Gantt.} %Modificar este título acorde.
+		\label{fig:gantt_tareas}
+	\end{figure}
+	
 \begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
-\label{fig:diagGantt}
-\end{figure}
-
+	\begin{figure}[htpb]
+		\centering 
+		\includegraphics[height=.85\textheight]{./Figuras/gantt_complete.png}
+		\caption{Diagrama de Gantt.} %Modificar este título acorde.
+		\label{fig:gantt_diagram}
+	\end{figure}
 \end{landscape}
-
-\end{consigna}
-
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
+A continuación se detalla el presupuesto del proyecto, discriminado en costos directos e indirectos, expresado en pesos argentinos.
 
 \begin{table}[htpb]
 \centering
@@ -499,24 +429,12 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+ Horas de ingeniería &
+  \multicolumn{1}{c|}{610 h} &
+  \multicolumn{1}{c|}{\$ 67.500 } &
+  \multicolumn{1}{c|}{\$ 41.175.000 } \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 41.175.000 } \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -524,22 +442,16 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+  40\% del costo directo  &
+	\multicolumn{1}{|l|}{1}&
+	\multicolumn{1}{|l|}{\$ 16.470.000 }&
+	\multicolumn{1}{|l|}{\$ 16.470.000 }
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 16.470.000 } \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
+\$ 57.645.000
    \\ \hline
 \end{tabularx}%
 \end{table}
