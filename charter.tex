@@ -62,7 +62,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1      & Se completa hasta el punto 5 inclusive   & 7  de mayo de 2024 \\ \hline
 2      & Se completa hasta el punto 9 inclusive  & 14  de mayo de 2024 \\ \hline
 3      & Se completa hasta el punto 12 inclusive                & 21 de mayo de 2024 \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
+4      & Se completa el plan	                                 & 28 de mayo de 2024 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -82,7 +82,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de inteligencia artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de de pacientes neonatales con hipoxia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un modelo de inteligencia artificial prototipo para optimizar el rendimiento de un sistema de regulación de temperatura para uso en tratamientos de de pacientes neonatales con hipoxia. Además se analizará la incidencia de los distintos atributos en la predicción. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ 57.645.000, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -209,7 +209,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item El desarrollo es alcanzable con los conocimientos actuales.
 	\item El tiempo será suficiente para alcanzar los objetivos planteados. teniendo en cuenta imprevistos y cambios de enfoque posibles.
 	\item Los accesos a la información y a los datos serán concedidos en tiempo y forma.
-	\item La cantidad de datos disponibles y el pr procesamiento que pueda hacerse de los mismos será suficiente para un resultado aceptable.
+	\item La cantidad de datos disponibles y el preprocesamiento que pueda hacerse de los mismos será suficiente para un resultado aceptable.
 \end{itemize}
 
 
@@ -385,7 +385,7 @@ En la figura \ref{fig:aon} se puede ver un diagrama Activity on Node del proyect
 
 \begin{figure}[htpb]
 	\centering 
-	\includegraphics[width=.75\textwidth]{./Figuras/amrra-AON.png}
+	\includegraphics[width=1\textwidth]{./Figuras/amrra-AON.png}
 	\caption{Activity on Node del proyecto.}
 	\label{fig:aon}
 \end{figure}
@@ -403,11 +403,11 @@ En la figura \ref{fig:gantt_tareas} se muestra el listado de tareas definido pre
 		\caption{Tareas del diagrama de Gantt.} %Modificar este título acorde.
 		\label{fig:gantt_tareas}
 	\end{figure}
-	
+
 \begin{landscape}
 	\begin{figure}[htpb]
 		\centering 
-		\includegraphics[height=.85\textheight]{./Figuras/gantt_complete.png}
+		\includegraphics[height=.75\textheight]{./Figuras/gantt_complete.png}
 		\caption{Diagrama de Gantt.} %Modificar este título acorde.
 		\label{fig:gantt_diagram}
 	\end{figure}
@@ -460,33 +460,49 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+A continuación se describirán los riesgos potenciales que se pueden presentar en el desarrollo del proyecto y los planes de mitigación.
+
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: los datos tomados de casos donde no se cumplió el protocolo de uso afectan la correctitud del modelo.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
-
-Riesgo 2:
-\begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 5. 
+	Este riesgo tiene una severidad media ya que puede afectar directamente en la correctitud del modelo desviando ligeramente la predicción correcta.
+	\item Probabilidad de ocurrencia (O): 6. 
+	La probabilidad de este riesgo es media ya que desde la empresa comentan que han detectado múltiples usos sin que se aplique correctamente el protocolo.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: no se dispone de la suficiente cantidad de datos.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 9. 
+	Reduce la probabilidad de que el modelo funcione correctamente
+	\item Ocurrencia (O): 2.
+	La probabilidad es baja ya que inicialmente se analizó la viabilidad del proyecto, y según las charlas iniciales se dispone de una cantidad de datos prometedora. Sin embargo no es seguro que estos datos serán lo suficientemente representativos del problema.
 \end{itemize}
 
+Riesgo 3: el modelo tiene un tiempo de respuesta mayor al del algoritmo actual.
+\begin{itemize}
+	\item Severidad (S): 2.
+	El modelo se ejecutará periódicamente, actualmente cada 15 minutos, y es éste su único uso. Por esto un aumento en los tiempos de respuesta no representa un problema mayor.
+	\item Ocurrencia (O): 8. 
+	La probabilidad de ocurrencia es alta dado que es muy probable que los modelos a utilizar requieran cálculos más complejos que el algoritmo actual.
+\end{itemize}
+
+Riesgo 4: el modelo no tiene un nivel de predicción superador.
+\begin{itemize}
+	\item Severidad (S): 4.
+	Este riesgo no invalida al proyecto en sí y tampoco implica que la realización del mismo no le aporta valor a la empresa.
+	\item Ocurrencia (O): 3.
+	La probabilidad de ocurrencia es baja ya que hay enfoques que prometen buenos resultados.
+\end{itemize}
+
+Riesgo 5: el poder de cómputo para entrenar los modelos es escaso.
+\begin{itemize}
+	\item Severidad (S): 7.
+	Este riesgo tiene una severidad media/alta ya que puede afectar directamente en la correctitud del modelo.
+	\item Probabilidad de ocurrencia (O): 5.
+		La probabilidad de este riesgo es media ya que se utilizará la misma computadora con la que se entrenaron los modelos realizados durante la carrera, y hasta ahora esto resulto suficiente, pero podría darse que no lo sea para el proyecto.
+\end{itemize}
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 
@@ -496,77 +512,172 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1. Los datos tomados de casos donde no se cumplió el protocolo afectan la correctitud del modelo. & 5  & 6  &   30  &  4  &  1  &   4   \\ \hline
+2. No se dispone de la suficiente cantidad de datos. & 9  & 2  &  18   &  -  &  -  &  -    \\ \hline
+3. El modelo tiene un tiempo de respuesta mayor al del algoritmo actual.& 2  & 8  &  16   &  -  &  -  &  -    \\ \hline
+4. El modelo no tiene un nivel de predicción superador.&  4 & 3  &  12   &  -  &  -  &  -    \\ \hline
+5. El poder de cómputo para entrenar los modelos es escaso.  & 7  & 5  &  35   &  7  &  1  &   7   \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 1: Se categorizarán los datos según si se percibe que se cumplió el protocolo o no, y se utilizarán los datos obtenidos en un contexto donde se haya cumplido el protocolo. Se evaluará entrenar un modelo para casos donde no se cumpla el protocolo si la cantidad de datos es suficiente.
   Nueva asignación de S y O, con su respectiva justificación:
   \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+	\item Severidad (S*): 4.
+          La severidad es media ya que los datos pueden afectar al modelo, pero seguramente sea en menor cantidad.
+	\item Probabilidad de ocurrencia (O*): 1.
+          Es altamente probable eliminar la mayoría de los datos que no representan correctamente al contexto.
 	\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
-
+Riesgo 5: Se utilizará la plataforma Google Colaboratory para entrenar a algunos de los modelos. En caso de que esta plataforma no brinde el poder de cómputo suficiente en su versión gratuita se pagará una cuota para obtener el nivel de cómputo suficiente.
+Nueva asignación de S y O, con su respectiva justificación:
+\begin{itemize}
+	\item Severidad (S*): 7.
+	La severidad es medida/alta ya que esto puede afectar directamente la precisión del modelo.
+	\item Probabilidad de ocurrencia (O*): 1.
+	Es altamente probable que Google Colaboratory ofrezca el poder de cómputo que se necesita para este proyecto.
+\end{itemize}
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+A continuación se listan los requerimientos y las condiciones para su verificación y validación.
 
 \begin{itemize} 
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+\item Req \#1: el modelo debe predecir el cambio de temperatura óptimo a aplicar.
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+	\item Verificación: se compararán los resultados del modelo con los del algoritmo actual para pacientes con distinto peso.
+	\item Validación: se graficarán los cambios de temperatura aplicados por el algoritmo actual y por el modelo para 5 pacientes tomados como ejemplo ante el cliente.
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
+\begin{itemize} 
+	\item Req \#2: se debe calcular la incidencia del peso y de los demás atributos en la solución.
+	
+	\begin{itemize}
+		\item Verificación: se graficará y detallarán los valores de la incidencia de cada parámetro en las predicciones del modelo según distintos criterios.
+		\item Validación: se comparará la respuesta del algoritmo actual y del modelo para dos pacientes con peso distinto.
+	\end{itemize}
+	
+\end{itemize}
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
+\begin{itemize} 
+	\item Req \#3: el modelo debe dar una respuesta en un tiempo promedio menor o igual a 10 veces el tiempo promedio de respuesta del algoritmo actual.
+	
+	\begin{itemize}
+		\item Verificación: se calculará el percentil 95 y el promedio de los tiempos de respuesta para el modelo y el algoritmo actual para una secuencia de pruebas.
+		\item Validación: se graficarán ejecuciones periódicas del algoritmo con distinta periodicidad verificando que se cumple el objetivo.
+	\end{itemize}
+	
+\end{itemize}
 
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\begin{itemize} 
+	\item Req \#4: se requiere categorizar los datos según el cumplimiento del protocolo del equipo.
+	
+	\begin{itemize}
+		\item Verificación: se añadirá un campo a cada dato que represente la categoría del mismo.
+		\item Validación: se graficarán los datos de cada categoría y se utilizarán los que cumplen el protocolo para el entrenamiento del modelo principal.
+	\end{itemize}
+	
+\end{itemize}
 
-\end{consigna}
+\begin{itemize} 
+	\item Req \#5: se deben generar datos sintéticos para el entrenamiento del modelo y la ejecución de pruebas.
+	
+	\begin{itemize}
+		\item Verificación: se utilizarán distintas estrategias para generar datos sintéticos.
+		\item Validación: se discriminarán las pruebas con datos sintéticos de las pruebas con datos reales.
+	\end{itemize}
+	
+\end{itemize}
+
+\begin{itemize} 
+	\item Req \#6: se debe desarrollar un entorno para ejecutar pruebas.
+	
+	\begin{itemize}
+		\item Verificación: se documentará el entorno de pruebas y cómo utilizarlo.
+		\item Validación: se brindará a los representantes de la empresa un entorno en el que puedan ejecutar pruebas y comparar resultados.
+	\end{itemize}
+	
+\end{itemize}
+
+\begin{itemize} 
+	\item Req \#7: se requiere documentar las pruebas realizadas y las métricas obtenidas.
+	
+	\begin{itemize}
+		\item Verificación: se documentarán las pruebas y las métricas de las pruebas y los modelos.
+		\item Validación: se brindará una tabla comparativa en la memoria técnica.
+	\end{itemize}
+	
+\end{itemize}
+
+\begin{itemize} 
+	\item Req \#8: se requiere que el modelo desarrollado esté bien documentado para su uso futuro.
+	
+	\begin{itemize}
+		\item Verificación: se incluirán en la memoria técnica los detalles del desarrollo del modelo.
+		\item Validación: se escribirá un manual de usuario incluyendo todo el detalle necesario para el uso futuro del modelo y su integración al equipo.
+	\end{itemize}
+	
+\end{itemize}
+
+\begin{itemize} 
+	\item Req \#9: el modelo deberá ser adaptativo respecto al peso del paciente.
+	
+	\begin{itemize}
+		\item Verificación: se incluirá al peso de cada paciente en el entrenamiento y como dato de entrada de las predicciones.
+		\item Validación: verificará que ante pacientes en las mismas condiciones excepto el peso, el modelo responde con predicciones diferentes.
+	\end{itemize}
+	
+\end{itemize}
+
+\begin{itemize} 
+	\item Req \#10: se requiere que los casos utilizados no expongan datos que infrinjan derechos de privacidad.
+	
+	\begin{itemize}
+		\item Verificación: se evaluará internamente si se cumple con los términos establecidos por la ley 25.326 para asegurar la protección de datos personales.
+		\item Validación: se verificará con el cliente que en ninguna sección del proyecto se vulnere la ley 25.326 de protección de datos personales.
+	\end{itemize}
+	
+\end{itemize}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+A continuación se describen las pautas de trabajo para realizar el cierre del proyecto.
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original.
+	Persona a cargo: Ezequiel Fernández.
+	\begin{itemize}
+		\item Se analizará el cumplimiento de los requerimientos.
+		\item Se verificará el cumplimiento de los plazos del plan de trabajo.
+		\item Análisis de los riesgos previstos y su gestión.
+		\item Análisis de los riesgos no previstos y su gestión.
+		\item Aprendizaje en base a la planificación del proyecto.
+	\end{itemize}
+	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron.
+		Persona a cargo: Ezequiel Fernández.
+	\begin{itemize}
+		\item Se documentarán las técnicas empleadas y sus resultados.
+		\item Se incluirá documentación sobre las estrategias adoptadas, los motivos y sus resultados, brindando aspectos favorables y desfavorables.
+		\item Se identificarán los problemas surgidos y cómo fueron abordados.
+	\end{itemize}
+	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores.
+	\begin{itemize}
+		\item Ezequiel Fernandez hará una presentación y defensa pública del proyecto organizada por FIUBA.
+		\item Se agradecerá a todos los involucrados, incluyendo a los representantes de la empresa, docentes, miembros del jurado y familia.
+	\end{itemize}
 \end{itemize}
-
-\end{consigna}
 
 \end{document}
