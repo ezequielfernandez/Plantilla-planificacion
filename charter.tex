@@ -135,7 +135,7 @@ En la figura  \ref{fig:diagBloquesFuturo} se puede ver la incorporación de un m
 
 Si bien existen artículos en la actualidad que analizan el uso de diversos modelos de \textit{machine learning} en contextos de hipotermia, la mayoría ponen el foco en estimar la mortalidad de los casos o en predecir potenciales casos de hipotermia. Estos enfoques son interesantes para evaluar los riesgos de someter al paciente bajo este tratamiento pero no son el objetivo de este proyecto. En este caso el foco estará en un modelo que regule de forma óptima la inducción a hipotermia de un paciente.
 
-El presente proyecto se ve impulsado por buscar innovación con el uso tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para la correcta inducción de hipotermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
+El presente proyecto se ve impulsado por buscar innovación con el uso de tecnologías nuevas en un producto clave de la empresa. Se evaluará si esto resulta en una mejora en la calidad del producto y por esto en los tratamientos de los pacientes. Además se analizará la incidencia del peso y demás datos en el tratamiento para la correcta inducción de hipotermia, lo que aporta al conocimiento que se tiene actualmente sobre estos tratamientos. 
 
 A futuro se llevará a cabo la integración del modelo resultante al sistema embebido del producto comercial Amrraterm HTF.
 
@@ -250,7 +250,7 @@ Para el desarrollo del presente proyecto se supone que:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-En esta sección se describirán algunas historias de usuarios ponderadas en un sistema de puntos, según el rol de cliente.
+En esta sección se describirán algunas historias de usuarios ponderadas en un sistema de puntos, según el rol del cliente.
 
 Para determinar los puntos de cada historia se definen los siguientes criterios:
 \begin{itemize}
@@ -274,7 +274,7 @@ Para determinar los puntos de cada historia se definen los siguientes criterios:
 		\end{itemize}
 \end{itemize}
 
-La cantidad de puntos de una historia de usuario estará definida por el número en la sucesión de Fibonacci mas cercano y mayor o igual a la suma del puntaje de los tres criterios definidos.
+La cantidad de puntos de una historia de usuario estará definida por el número en la sucesión de Fibonacci más cercano y mayor o igual a la suma del puntaje de los tres criterios definidos.
 
 \begin{itemize}
 	\item Como cliente, quiero contar con un modelo que estime el cambio de temperatura en el equipo para tratamientos de hipotermia.
@@ -284,7 +284,7 @@ La cantidad de puntos de una historia de usuario estará definida por el número
 			\item Incertidumbre: 10 puntos.
 			\item Story Points: 5 + 5 + 10 = 20, tomando el siguiente de la sucesión de Fibonacci el puntaje es 21.
 		\end{itemize}
-	\item Como cliente, quiero conocer la incidencia del peso en el calculo de la variación de temperatura óptima para los pacientes.
+	\item Como cliente, quiero conocer la incidencia del peso en el cálculo de la variación de temperatura óptima para los pacientes.
 		\begin{itemize}
 			\item Cantidad de trabajo 1 punto.
 			\item Complejidad: 5 puntos.
@@ -296,14 +296,14 @@ La cantidad de puntos de una historia de usuario estará definida por el número
 			\item Cantidad de trabajo 3 puntos.
 			\item Complejidad: 2 puntos.
 			\item Incertidumbre: 3 puntos.
-			\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual mas cercano de la sucesión de Fibonacci el puntaje es 8.
+			\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual más cercano de la sucesión de Fibonacci el puntaje es 8.
 		\end{itemize}
 	\item Como cliente, quiero un entorno en el cual comparar el resultado del modelo y el del algoritmo actual para una entrada dada.
 	\begin{itemize}
 		\item Cantidad de trabajo 3 puntos.
 		\item Complejidad: 2 puntos.
 		\item Incertidumbre: 3 puntos.
-		\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual mas cercano de la sucesión de Fibonacci el puntaje es 8.
+		\item Story Points: 3 + 2 + 3 = 8, tomando el número mayor o igual más cercano de la sucesión de Fibonacci el puntaje es 8.
 	\end{itemize}
 \end{itemize}
 
@@ -477,7 +477,7 @@ Riesgo 2: no se dispone de la suficiente cantidad de datos.
 	\item Severidad (S): 9. 
 	Reduce la probabilidad de que el modelo funcione correctamente
 	\item Ocurrencia (O): 2.
-	La probabilidad es baja ya que inicialmente se analizó la viabilidad del proyecto, y según las charlas iniciales se dispone de una cantidad de datos prometedora. Sin embargo no es seguro que estos datos serán lo suficientemente representativos del problema.
+	La probabilidad es baja ya que inicialmente se analizó la viabilidad del proyecto, y según las charlas iniciales se dispone de una cantidad de datos prometedora. Sin embargo, no es seguro que estos datos sean lo suficientemente representativos del problema.
 \end{itemize}
 
 Riesgo 3: el modelo tiene un tiempo de respuesta mayor al del algoritmo actual.
@@ -491,7 +491,7 @@ Riesgo 3: el modelo tiene un tiempo de respuesta mayor al del algoritmo actual.
 Riesgo 4: el modelo no tiene un nivel de predicción superador.
 \begin{itemize}
 	\item Severidad (S): 4.
-	Este riesgo no invalida al proyecto en sí y tampoco implica que la realización del mismo no le aporta valor a la empresa.
+	Este riesgo no invalida al proyecto en sí y tampoco implica que la realización del mismo no le aporte valor a la empresa.
 	\item Ocurrencia (O): 3.
 	La probabilidad de ocurrencia es baja ya que hay enfoques que prometen buenos resultados.
 \end{itemize}
@@ -501,7 +501,7 @@ Riesgo 5: el poder de cómputo para entrenar los modelos es escaso.
 	\item Severidad (S): 7.
 	Este riesgo tiene una severidad media/alta ya que puede afectar directamente en la correctitud del modelo.
 	\item Probabilidad de ocurrencia (O): 5.
-		La probabilidad de este riesgo es media ya que se utilizará la misma computadora con la que se entrenaron los modelos realizados durante la carrera, y hasta ahora esto resulto suficiente, pero podría darse que no lo sea para el proyecto.
+		La probabilidad de este riesgo es media ya que se utilizará la misma computadora con la que se entrenaron los modelos realizados durante la carrera, y hasta ahora esto resultó suficiente, pero podría darse que no lo sea para el proyecto.
 \end{itemize}
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
@@ -528,7 +528,7 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: Se categorizarán los datos según si se percibe que se cumplió el protocolo o no, y se utilizarán los datos obtenidos en un contexto donde se haya cumplido el protocolo. Se evaluará entrenar un modelo para casos donde no se cumpla el protocolo si la cantidad de datos es suficiente.
+Riesgo 1: se categorizarán los datos según si se percibe que se cumplió el protocolo o no, y se utilizarán los datos obtenidos en un contexto donde se haya cumplido el protocolo. Se evaluará entrenar un modelo para casos donde no se cumpla el protocolo si la cantidad de datos es suficiente.
   Nueva asignación de S y O, con su respectiva justificación:
   \begin{itemize}
 	\item Severidad (S*): 4.
@@ -537,11 +537,11 @@ Riesgo 1: Se categorizarán los datos según si se percibe que se cumplió el pr
           Es altamente probable eliminar la mayoría de los datos que no representan correctamente al contexto.
 	\end{itemize}
 
-Riesgo 5: Se utilizará la plataforma Google Colaboratory para entrenar a algunos de los modelos. En caso de que esta plataforma no brinde el poder de cómputo suficiente en su versión gratuita se pagará una cuota para obtener el nivel de cómputo suficiente.
+Riesgo 5: se utilizará la plataforma Google Colaboratory para entrenar a algunos de los modelos. En caso de que esta plataforma no brinde el poder de cómputo suficiente en su versión gratuita se pagará una cuota para obtener el nivel de cómputo suficiente.
 Nueva asignación de S y O, con su respectiva justificación:
 \begin{itemize}
 	\item Severidad (S*): 7.
-	La severidad es medida/alta ya que esto puede afectar directamente la precisión del modelo.
+	La severidad es media/alta ya que esto puede afectar directamente la precisión del modelo.
 	\item Probabilidad de ocurrencia (O*): 1.
 	Es altamente probable que Google Colaboratory ofrezca el poder de cómputo que se necesita para este proyecto.
 \end{itemize}
@@ -555,7 +555,7 @@ A continuación se listan los requerimientos y las condiciones para su verificac
 \item Req \#1: el modelo debe predecir el cambio de temperatura óptimo a aplicar.
 
 \begin{itemize}
-	\item Verificación: se compararán los resultados del modelo con los del algoritmo actual para pacientes con distinto peso.
+	\item Verificación: se compararán los resultados del modelo con los del algoritmo actual para un conjunto de pacientes.
 	\item Validación: se graficarán los cambios de temperatura aplicados por el algoritmo actual y por el modelo para 5 pacientes tomados como ejemplo ante el cliente.
 \end{itemize}
 
